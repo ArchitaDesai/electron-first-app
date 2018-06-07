@@ -1,0 +1,22 @@
+{
+  "name": "sysinfoapp",
+  "version": "1.0.0",
+  "description": "Simple System Monitor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArchitaDesai/electron-first-app.git"
+  },
+  "author": "Archita Desai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArchitaDesai/electron-first-app/issues"
+  },
+  "homepage": "https://github.com/ArchitaDesai/electron-first-app#readme",
+  "dependencies": {
+    "electron": "^2.0.2"
+  }
+}
