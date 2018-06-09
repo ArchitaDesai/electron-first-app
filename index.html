@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <title>System Info App</title>
      <!-- bootswatch => customized bootstrap -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
 </head>
 <body>
-    <h1>Archita's First Electron App</h1>
+    
+    <div class="container">
+        <h1>System Info App</h1>
+        <!-- To display system info: -->
+        <div id="output"></div>
+    </div>
+
+    <!-- To access process data -->
+    <script>
+        
+        console.log(process);
+        /* 
+         * Use backticks `` to include html template in JavaScript
+         * Use ${jsVarName} or ${jsExpression} 
+            to write JS variable or expression inside HTML
+        */
+        var output = `
+                <h3 class="page-header">App Version Data</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Node: ${process.versions.node}</li>
+                    <li class="list-group-item">Chrome: ${process.versions.chrome}</li>
+                    <li class="list-group-item">Electron: ${process.versions.electron}</li>   
+                </ul>
+        
+                <h3 class="page-header">Memory Info</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Total: ${process.getSystemMemoryInfo().total} Bytes</li>
+                    <li class="list-group-item">Free: ${process.getSystemMemoryInfo().free} Bytes</li>
+                    <li class="list-group-item">Swap Total: ${process.getSystemMemoryInfo().swapTotal} Bytes</li>
+                    <li class="list-group-item">Swap Free: ${process.getSystemMemoryInfo().swapFree} Bytes</li> 
+                </ul>
+
+                <h3 class="page-header">Computer Info</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">System Architecture: ${process.arch}</li>
+                    <li class="list-group-item">Username: ${process.env.USERNAME}</li>
+                    <li class="list-group-item">Home Path: ${process.env.HOME}</li>
+                </ul>
+        `
+
+        // Assign this html template in output variable to id="output"
+        document.getElementById('output').innerHTML = output;
+
+    </script>
+
     <script>
         require('./rederer.js');
     </script>

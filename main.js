@@ -12,7 +12,6 @@ function createWindow() {
     win = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fimages.hellogiggles.com%2Fuploads%2F2015%2F12%2F11083247%2Fcat.jpg&w=700&q=85'
     });
 
     // To load index.html
